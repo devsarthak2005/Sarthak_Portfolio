@@ -22,10 +22,11 @@ const Work = () => {
         .querySelector(".work-container")!
         .getBoundingClientRect().left;
       const rect = box[0].getBoundingClientRect();
-      const parentWidth = box[0].parentElement!.getBoundingClientRect().width;
-      let padding: number =
-        parseInt(window.getComputedStyle(box[0]).padding) / 2;
-      translateX = rect.width * box.length - (rectLeft + parentWidth) + padding;
+      let totalWidth = rect.width * box.length;
+      let paddingRight = parseInt(window.getComputedStyle(box[0].parentElement!).paddingRight) || 0;
+      // We want to translate enough so the right edge of the last box touches the right edge of the screen, plus some buffer
+      translateX = totalWidth + paddingRight - window.innerWidth + rectLeft + 100;
+      if (translateX < 0) translateX = 0;
     }
 
     setTranslateX();

@@ -89,7 +89,7 @@
 @media only screen and (min-width: 1025px) {
   .about-section {
     width: var(--cWidth);
-    justify-content: flex-start; /* Changed from right to flex-start to prevent collision with avatar */
+    justify-content: flex-end;
     max-width: 1920px;
     height: var(--vh);
     padding: 0px;
@@ -97,11 +97,12 @@
   }
   .about-me {
     padding: 30px;
-    width: 50%;
+    width: 45%;
+    margin-right: 2%;
   }
   .about-me p {
-    font-size: 1.1vw; /* Reduced from 1.9vw */
-    line-height: 1.6vw; /* Reduced from 2.3vw */
+    font-size: 1.1rem !important;
+    line-height: 1.7rem !important;
     font-weight: 400;
   }
   .about-me .detail-box {
@@ -113,7 +114,7 @@
 }
 @media only screen and (min-width: 1950px) {
   .about-me p {
-    font-size: 1.5rem;
-    line-height: 2.2rem;
+    font-size: 1.25rem !important;
+    line-height: 1.8rem !important;
   }
 }
